@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        (function() {
+            const theme = localStorage.getItem("theme") || "light";
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <title>Stratagem Africa Advisory | About Us</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="Css/styles.css?v=1.1" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="logo-group">
+                <div class="logo-icon">
+                    <img src="images/Logo/logo.jpeg" alt="Stratagem Africa Logo">
+                </div>
+                <strong>Stratagem Africa</strong>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="nav-cta btn">Book Consultation</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Hamburger Button -->
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Panel -->
+    <div class="mobile-nav-panel" id="mobileNav">
+        <div class="mobile-nav-container">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="nav-cta btn">Book Consultation</a>
+        </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>We are Stratagem Africa.</h1>
+            <p>A professional business consultancy committed to serving as a trusted partner for SMEs and investors across Zambia and the African continent.</p>
+        </div>
+    </section>
+
+    <!-- PURPOSE -->
+    <section class="purpose-section">
+        <div class="container">
+            <div class="purpose-block">
+                <h2>Our Purpose</h2>
+                <div class="purpose-text">
+                    <p>Stratagem Africa Advisory was established to bridge the gap between complex regulatory demands and the practical operational needs of growing businesses. We support entrepreneurs by providing clear guidance, accounting systems, and compliance frameworks that unlock growth with confidence.</p>
+                    <p>Rather than acting as simple external service providers, we position ourselves as long-term strategic partners. We are deeply invested in our clients' success, helping them simplify complexity and manage governance requirements securely so they can focus on their core operations.</p>
+                </div>
+            </div>
+            
+            <!-- VISION & MISSION -->
+            <div class="vision-mission-grid">
+                <div class="vm-card">
+                    <h3>Our Vision</h3>
+                    <p>To be the premier trusted strategic advisory partner for SMEs and cross-border investors in Zambia and across Africa, enabling sustainable corporate growth through sound governance, transparency, and informed strategic guidance.</p>
+                </div>
+                <div class="vm-card">
+                    <h3>Our Mission</h3>
+                    <p>To support and empower businesses by delivering practical, high-integrity, and client-centric compliance and advisory services that simplify administrative structures and foster long-term commercial success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose-us-section" style="background-color: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="why-choose-us-grid">
+                <div class="why-choose-us-content">
+                    <h2>Why Stratagem Africa</h2>
+                    <p>Building a company in Africa requires navigating distinct local procedures and regulatory agencies. We bring deep, practical compliance knowledge to help you navigate these systems without friction.</p>
+                </div>
+                <ul class="reasons-list">
+                    <li>Strategic partners committed to your long-term success</li>
+                    <li>Tailored, SME-focused services for real growth needs</li>
+                    <li>Strong local knowledge across PACRA, ZRA, NHIMA, and NAPSA</li>
+                    <li>End-to-end integration of company setup and banking advisory</li>
+                    <li>Regional, cross-border expertise for foreign market entrants</li>
+                    <li>Uncompromising adherence to professional integrity and accountability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to work with a partner who understands your needs?</h2>
+            <p>Schedule a conversation with our advisory team to discuss how we can streamline your regulatory, tax, and governance requirements.</p>
+            <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Stratagem Africa Advisory</div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-copy">
+                    &copy; 2026 Stratagem Africa Advisory Limited. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NAVIGATION HAMBURGER SCRIPT -->
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById("themeToggle");
+        
+        themeToggle.addEventListener("click", () => {
+            let theme = "light";
+            if (document.documentElement.getAttribute("data-theme") !== "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+                theme = "dark";
+            } else {
+                document.documentElement.removeAttribute("data-theme");
+            }
+            localStorage.setItem("theme", theme);
+        });
+
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileNav = document.getElementById("mobileNav");
+        
+        menuToggle.addEventListener("click", () => {
+            mobileNav.classList.toggle("open");
+            menuToggle.classList.toggle("active");
+            
+            const spans = menuToggle.querySelectorAll("span");
+            if(menuToggle.classList.contains("active")) {
+                spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+                spans[1].style.opacity = "0";
+                spans[2].style.transform = "rotate(-45deg) translate(4px, -5px)";
+            } else {
+                spans[0].style.transform = "none";
+                spans[1].style.opacity = "1";
+                spans[2].style.transform = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

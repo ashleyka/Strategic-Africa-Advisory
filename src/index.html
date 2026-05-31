@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        (function() {
+            const theme = localStorage.getItem("theme") || "light";
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <title>Stratagem Africa Advisory | Strategic Guidance. Confident Growth.</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="Css/styles.css?v=1.1" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="logo-group">
+                <div class="logo-icon">
+                    <img src="images/Logo/logo.jpeg" alt="Stratagem Africa Logo">
+                </div>
+                <strong>Stratagem Africa</strong>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="nav-cta btn">Book Consultation</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Hamburger Button -->
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Panel -->
+    <div class="mobile-nav-panel" id="mobileNav">
+        <div class="mobile-nav-container">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="nav-cta btn">Book Consultation</a>
+        </div>
+    </div>
+
+    <!-- HERO SLIDESHOW -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-slideshow">
+                <div class="slides">
+            
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <h1>Strategic Guidance.<br>Confident Growth.</h1>
+                            <p>Trusted advisory support for SMEs in Zambia and across Africa. We simplify complexity so you can grow.</p>
+                            <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+                        </div>
+                        <div class="slide-image-wrapper">
+                            <img src="images/hero-1.jpg.jpeg" alt="Strategic Business Advisory">
+                        </div>
+                    </div>
+            
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h1>Compliance<br>Made Clear.</h1>
+                            <p>Company secretarial, tax registration, and regulatory governance support you can rely on at every step.</p>
+                            <a href="services.html" class="btn btn-primary">Our Services</a>
+                        </div>
+                        <div class="slide-image-wrapper">
+                            <img src="images/hero-2.jpg.jpeg" alt="Compliance and Governance">
+                        </div>
+                    </div>
+            
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h1>Cross-Border<br>Advisory.</h1>
+                            <p>Guiding international investors and businesses expanding across Zambian and regional African markets.</p>
+                            <a href="contact.html" class="btn btn-primary">Talk to Us</a>
+                        </div>
+                        <div class="slide-image-wrapper">
+                            <img src="images/hero-3.jpg.jpeg" alt="Cross-Border Advisory">
+                        </div>
+                    </div>
+            
+                </div>
+            
+                <!-- Navigation dots -->
+                <div class="slide-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="container">
+        <div class="trust-strip">
+            <span class="trust-badge">Local Expertise</span>
+            <span class="trust-badge">Compliance Focused</span>
+            <span class="trust-badge">SME & Investor Support</span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Services</h2>
+                <p>We provide professional advisory and compliance solutions to help businesses establish strong foundations and expand with confidence.</p>
+            </div>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-card-top">
+                        <h3>Business Advisory</h3>
+                        <p>Clear, practical growth planning, operational structuring, and market guidance to support informed strategic decisions.</p>
+                    </div>
+                    <div class="service-card-bottom">
+                        <a href="services.html" class="card-link">Explore Advisory Services <span>→</span></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-top">
+                        <h3>Accounting & Tax</h3>
+                        <p>Accurate bookkeeping, management accounts, TPIN setup, VAT returns, and expert tax advisory aligned with current local regulations.</p>
+                    </div>
+                    <div class="service-card-bottom">
+                        <a href="services.html" class="card-link">Explore Financial Services <span>→</span></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-top">
+                        <h3>Company Secretarial</h3>
+                        <p>End-to-end corporate governance, incorporation, annual returns, and mandatory compliance filings across PACRA, ZRA, and social systems.</p>
+                    </div>
+                    <div class="service-card-bottom">
+                        <a href="services.html" class="card-link">Explore Corporate Filings <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW -->
+    <section class="about-preview-section">
+        <div class="container">
+            <div class="about-preview-grid">
+                <div class="about-preview-content">
+                    <h2>Uncompromising integrity. Practical solutions.</h2>
+                    <p>Stratagem Africa Advisory provides ethical, professional services designed to help businesses navigate complex regulatory and financial environments in Africa.</p>
+                    <p>We work as your long-term partners, simplifying local procedures to help you focus on scaling your business with complete compliance.</p>
+                    <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
+                </div>
+                <div class="about-preview-image">
+                    <img src="images/hero-1.jpg.jpeg" alt="Stratagem Africa Workspace">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Entrepreneurs</h2>
+                <p>Hear from businesses and investors who rely on Stratagem Africa to navigate compliance and scale their operations.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Stratagem Africa simplified our PACRA registration and tax compliance setup in record time. Their continuous support gives us complete confidence to focus on expansion."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Chileshe Mwaba</h4>
+                            <p>Founder, Kalingalinga Logistics</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Entering the Zambian market required a partner with deep compliance knowledge. Stratagem Africa provided exceptional advisory on cross-border business setup."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Elena Rostova</h4>
+                            <p>Managing Director, Vostok Ventures Ltd</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to establish your business foundation?</h2>
+            <p>Speak with our advisors today to outline your compliance strategy, setup banking, and organize your company operations.</p>
+            <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Stratagem Africa Advisory</div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-copy">
+                    &copy; 2026 Stratagem Africa Advisory Limited. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NAVIGATION & SLIDESHOW SCRIPT -->
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById("themeToggle");
+        
+        themeToggle.addEventListener("click", () => {
+            let theme = "light";
+            if (document.documentElement.getAttribute("data-theme") !== "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+                theme = "dark";
+            } else {
+                document.documentElement.removeAttribute("data-theme");
+            }
+            localStorage.setItem("theme", theme);
+        });
+
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileNav = document.getElementById("mobileNav");
+        
+        menuToggle.addEventListener("click", () => {
+            mobileNav.classList.toggle("open");
+            menuToggle.classList.toggle("active");
+            
+            // Hamburger icon animation
+            const spans = menuToggle.querySelectorAll("span");
+            if(menuToggle.classList.contains("active")) {
+                spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+                spans[1].style.opacity = "0";
+                spans[2].style.transform = "rotate(-45deg) translate(4px, -5px)";
+            } else {
+                spans[0].style.transform = "none";
+                spans[1].style.opacity = "1";
+                spans[2].style.transform = "none";
+            }
+        });
+
+        // Hero Slideshow Logic
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+        let currentIndex = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+                dots[i].classList.toggle("active", i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function startAutoplay() {
+            slideInterval = setInterval(nextSlide, 6000); // 6 seconds per slide
+        }
+
+        function stopAutoplay() {
+            clearInterval(slideInterval);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                stopAutoplay();
+                currentIndex = index;
+                showSlide(currentIndex);
+                startAutoplay();
+            });
+        });
+
+        // Initialize slideshow
+        startAutoplay();
+    </script>
+</body>
+
+</html>
