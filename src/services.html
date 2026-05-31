@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-        (function() {
+        (function () {
             const theme = localStorage.getItem("theme") || "light";
             if (theme === "dark") {
                 document.documentElement.setAttribute("data-theme", "dark");
@@ -21,16 +21,23 @@
 
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="container nav">
-            <a href="index.html" class="logo-group">
-                <div class="logo-icon">
-                    <img src="images/Logo/logo.jpeg" alt="Stratagem Africa Logo">
-                </div>
-                <strong>Stratagem Africa</strong>
-            </a>
-            
+<!-- NAVBAR -->
+<header>
+    <div class="container nav">
+        <a href="index.html" class="logo-group">
+            <div class="logo-icon">
+                <img src="images/Logo/logo.jpeg" alt="Stratagem Africa Logo">
+            </div>
+            <div class="logo-text">
+                <strong>Stratagem Africa</strong><br>
+                <small
+                    style="font-size: 0.85rem; font-weight: normal; opacity: 0.85; display: block; margin-top: 2px;">For
+                    A Confident Start and Strategic Growth</small>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <!-- Navigation links remain exactly the same -->
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -41,11 +48,15 @@
 
             <div class="header-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                 </button>
 
@@ -74,7 +85,8 @@
     <section class="page-hero">
         <div class="container">
             <h1>Our Services.</h1>
-            <p>At Stratagem Africa Advisory, we deliver comprehensive corporate compliance, accounting, tax, and strategic market entry solutions to help your business operate with confidence.</p>
+            <p>At Stratagem Africa Advisory, we deliver comprehensive corporate compliance, accounting, tax, and
+                strategic market entry solutions to help your business operate with confidence.</p>
         </div>
     </section>
 
@@ -82,12 +94,13 @@
     <section class="services-detail-section" style="background-color: #ffffff;">
         <div class="container">
             <div class="services-detail-list">
-                
+
                 <!-- SERVICE 1 -->
                 <div class="service-detail-block">
                     <div class="service-info-left">
                         <h2>01. Company Secretarial & Corporate Compliance</h2>
-                        <p>We ensure that your corporate structures are properly established, registered, and maintained in compliance with the laws of Zambia.</p>
+                        <p>We ensure that your corporate structures are properly established, registered, and maintained
+                            in compliance with the laws of Zambia.</p>
                     </div>
                     <div class="service-info-right">
                         <h3>Company Registration (PACRA)</h3>
@@ -113,7 +126,8 @@
                         </ul>
 
                         <div class="ideal-for-box">
-                            <strong>Ideal for:</strong> Startups, expanding local SMEs, and foreign-owned entities seeking absolute compliance and regulatory peace of mind.
+                            <strong>Ideal for:</strong> Startups, expanding local SMEs, and foreign-owned entities
+                            seeking absolute compliance and regulatory peace of mind.
                         </div>
                     </div>
                 </div>
@@ -122,7 +136,8 @@
                 <div class="service-detail-block">
                     <div class="service-info-left">
                         <h2>02. Accounting & Bookkeeping</h2>
-                        <p>Reliable financial tracking and reporting processes designed to give business owners maximum financial clarity.</p>
+                        <p>Reliable financial tracking and reporting processes designed to give business owners maximum
+                            financial clarity.</p>
                     </div>
                     <div class="service-info-right">
                         <h3>Financial Support Solutions</h3>
@@ -136,7 +151,8 @@
                         </ul>
 
                         <div class="ideal-for-box">
-                            <strong>Ideal for:</strong> Growing businesses needing structured financial reporting without the overhead of a full-time in-house accounting department.
+                            <strong>Ideal for:</strong> Growing businesses needing structured financial reporting
+                            without the overhead of a full-time in-house accounting department.
                         </div>
                     </div>
                 </div>
@@ -145,7 +161,8 @@
                 <div class="service-detail-block">
                     <div class="service-info-left">
                         <h2>03. Taxation & Statutory Filings</h2>
-                        <p>We help you navigate the complexity of tax compliance, protecting your business from penalties and audits.</p>
+                        <p>We help you navigate the complexity of tax compliance, protecting your business from
+                            penalties and audits.</p>
                     </div>
                     <div class="service-info-right">
                         <h3>Tax Compliance Offerings</h3>
@@ -158,7 +175,8 @@
                         </ul>
 
                         <div class="ideal-for-box">
-                            <strong>Ideal for:</strong> Businesses operating in regulated sectors that require precise tax planning and timely monthly submissions to the ZRA.
+                            <strong>Ideal for:</strong> Businesses operating in regulated sectors that require precise
+                            tax planning and timely monthly submissions to the ZRA.
                         </div>
                     </div>
                 </div>
@@ -167,7 +185,8 @@
                 <div class="service-detail-block">
                     <div class="service-info-left">
                         <h2>04. Corporate Banking Support</h2>
-                        <p>Navigating bank requirements for new corporate accounts, especially for international investors and new business owners.</p>
+                        <p>Navigating bank requirements for new corporate accounts, especially for international
+                            investors and new business owners.</p>
                     </div>
                     <div class="service-info-right">
                         <h3>Banking Setup Support</h3>
@@ -179,7 +198,8 @@
                         </ul>
 
                         <div class="ideal-for-box">
-                            <strong>Ideal for:</strong> International business owners establishing local presence who require expedited, compliant corporate bank account activation.
+                            <strong>Ideal for:</strong> International business owners establishing local presence who
+                            require expedited, compliant corporate bank account activation.
                         </div>
                     </div>
                 </div>
@@ -188,7 +208,8 @@
                 <div class="service-detail-block">
                     <div class="service-info-left">
                         <h2>05. Cross-Border Advisory & Market Entry</h2>
-                        <p>Dedicated market entry support for foreign corporations looking to establish commercial operations in Zambia.</p>
+                        <p>Dedicated market entry support for foreign corporations looking to establish commercial
+                            operations in Zambia.</p>
                     </div>
                     <div class="service-info-right">
                         <h3>Market Entry Solutions</h3>
@@ -200,7 +221,8 @@
                         </ul>
 
                         <div class="ideal-for-box">
-                            <strong>Ideal for:</strong> International companies, NGOs, and regional enterprises executing market entry strategies into Southern Africa.
+                            <strong>Ideal for:</strong> International companies, NGOs, and regional enterprises
+                            executing market entry strategies into Southern Africa.
                         </div>
                     </div>
                 </div>
@@ -209,7 +231,8 @@
                 <div class="service-detail-block">
                     <div class="service-info-left">
                         <h2>06. Strategic Business Advisory</h2>
-                        <p>Long-term strategic partnership to build business value, optimize operational structures, and plan for scale.</p>
+                        <p>Long-term strategic partnership to build business value, optimize operational structures, and
+                            plan for scale.</p>
                     </div>
                     <div class="service-info-right">
                         <h3>Growth Advisory Solutions</h3>
@@ -221,7 +244,8 @@
                         </ul>
 
                         <div class="ideal-for-box">
-                            <strong>Ideal for:</strong> Mid-sized businesses seeking expert guidance to navigate scaling and secure financing.
+                            <strong>Ideal for:</strong> Mid-sized businesses seeking expert guidance to navigate scaling
+                            and secure financing.
                         </div>
                     </div>
                 </div>
@@ -231,12 +255,14 @@
     </section>
 
     <!-- SERVICE PHILOSOPHY -->
-    <section class="philosophy-section" style="background-color: var(--bg-base); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="philosophy-section"
+        style="background-color: var(--bg-base); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
         <div class="container">
             <div class="philosophy-card">
                 <h2>Our Service Philosophy</h2>
-                <p style="max-width: 600px; margin: 0 auto 30px auto;">Everything we do is anchored in providing professional, actionable solutions that add real value to your enterprise.</p>
-                
+                <p style="max-width: 600px; margin: 0 auto 30px auto;">Everything we do is anchored in providing
+                    professional, actionable solutions that add real value to your enterprise.</p>
+
                 <div class="philosophy-grid">
                     <div class="philosophy-item">
                         <h4>Integrity First</h4>
@@ -267,7 +293,8 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to structure your business compliance?</h2>
-            <p>Connect with Stratagem Africa Advisory today. Our specialists will review your requirements and outline a tailored roadmap.</p>
+            <p>Connect with Stratagem Africa Advisory today. Our specialists will review your requirements and outline a
+                tailored roadmap.</p>
             <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
         </div>
     </section>
@@ -294,7 +321,7 @@
     <script>
         // Theme Toggle Logic
         const themeToggle = document.getElementById("themeToggle");
-        
+
         themeToggle.addEventListener("click", () => {
             let theme = "light";
             if (document.documentElement.getAttribute("data-theme") !== "dark") {
@@ -308,13 +335,13 @@
 
         const menuToggle = document.getElementById("menuToggle");
         const mobileNav = document.getElementById("mobileNav");
-        
+
         menuToggle.addEventListener("click", () => {
             mobileNav.classList.toggle("open");
             menuToggle.classList.toggle("active");
-            
+
             const spans = menuToggle.querySelectorAll("span");
-            if(menuToggle.classList.contains("active")) {
+            if (menuToggle.classList.contains("active")) {
                 spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
                 spans[1].style.opacity = "0";
                 spans[2].style.transform = "rotate(-45deg) translate(4px, -5px)";

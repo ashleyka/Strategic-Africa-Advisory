@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-        (function() {
+        (function () {
             const theme = localStorage.getItem("theme") || "light";
             if (theme === "dark") {
                 document.documentElement.setAttribute("data-theme", "dark");
@@ -21,16 +21,24 @@
 
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="container nav">
-            <a href="index.html" class="logo-group">
-                <div class="logo-icon">
-                    <img src="images/Logo/logo.jpeg" alt="Stratagem Africa Logo">
-                </div>
-                <strong>Stratagem Africa</strong>
-            </a>
-            
+<!-- NAVBAR -->
+<header>
+    <div class="container nav">
+        <a href="index.html" class="logo-group">
+            <div class="logo-icon">
+                <img src="images/Logo/logo.jpeg" alt="Stratagem Africa Logo">
+            </div>
+            <div class="logo-text">
+                <strong>Stratagem Africa</strong><br>
+                <small
+                    style="font-size: 0.85rem; font-weight: normal; opacity: 0.85; display: block; margin-top: 2px;">For
+                    A Confident Start and Strategic Growth</small>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <!-- Navigation links remain exactly the same -->
+
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -41,11 +49,15 @@
 
             <div class="header-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                 </button>
 
@@ -74,7 +86,8 @@
     <section class="page-hero">
         <div class="container">
             <h1>Start a conversation.</h1>
-            <p>Connect with our advisory team to discuss how we can support your business setup, tax compliance, and commercial growth in Zambia and across Africa.</p>
+            <p>Connect with our advisory team to discuss how we can support your business setup, tax compliance, and
+                commercial growth in Zambia and across Africa.</p>
         </div>
     </section>
 
@@ -82,12 +95,13 @@
     <section class="contact-section" style="background-color: #ffffff;">
         <div class="container">
             <div class="contact-grid">
-                
+
                 <!-- Contact Info Column -->
                 <div class="contact-info">
                     <h2>Reach out to us</h2>
-                    <p>Whether you are a local SME starting up or a cross-border investor planning market entry, our team is ready to assist you. Drop us a line or visit our office.</p>
-                    
+                    <p>Whether you are a local SME starting up or a cross-border investor planning market entry, our
+                        team is ready to assist you. Drop us a line or visit our office.</p>
+
                     <div class="contact-details-list">
                         <div class="contact-detail-item">
                             <h4>Office Location</h4>
@@ -107,39 +121,42 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Contact Form Column -->
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will contact you shortly.'); this.reset();">
+                    <form class="contact-form" action="#" method="POST"
+                        onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will contact you shortly.'); this.reset();">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" required placeholder="Enter your full name">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="company">Company Name</label>
                             <input type="text" id="company" name="company" placeholder="Enter your company name">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email Address *</label>
                             <input type="email" id="email" name="email" required placeholder="Enter your email address">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
                             <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">How can we help? *</label>
-                            <textarea id="message" name="message" required placeholder="Tell us about your business goals and compliance requirements"></textarea>
+                            <textarea id="message" name="message" required
+                                placeholder="Tell us about your business goals and compliance requirements"></textarea>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 10px; padding: 12px 28px;">Send Message</button>
+
+                        <button type="submit" class="btn btn-primary"
+                            style="align-self: flex-start; margin-top: 10px; padding: 12px 28px;">Send Message</button>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -151,9 +168,9 @@
                 <h2>Frequently Asked Questions</h2>
                 <p>Find quick answers to common compliance and business setup queries in Zambia.</p>
             </div>
-            
+
             <div class="faq-list">
-                
+
                 <!-- FAQ Item 1 -->
                 <div class="faq-item">
                     <button class="faq-trigger">
@@ -161,10 +178,12 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <p>Typically, company incorporation takes between 3 to 5 business days once the company name is approved and all directorship/shareholder signatures are secured. Stratagem Africa manages the entire incorporation workflow to minimize delays.</p>
+                        <p>Typically, company incorporation takes between 3 to 5 business days once the company name is
+                            approved and all directorship/shareholder signatures are secured. Stratagem Africa manages
+                            the entire incorporation workflow to minimize delays.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 2 -->
                 <div class="faq-item">
                     <button class="faq-trigger">
@@ -172,10 +191,12 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <p>Every newly registered company must register for a Taxpayer Identification Number (TPIN) with the Zambia Revenue Authority (ZRA). Depending on turnover, you may also need to register for Value Added Tax (VAT), and Pay As You Earn (PAYE) if employing local staff.</p>
+                        <p>Every newly registered company must register for a Taxpayer Identification Number (TPIN) with
+                            the Zambia Revenue Authority (ZRA). Depending on turnover, you may also need to register for
+                            Value Added Tax (VAT), and Pay As You Earn (PAYE) if employing local staff.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 3 -->
                 <div class="faq-item">
                     <button class="faq-trigger">
@@ -183,10 +204,12 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <p>Yes. Foreign nationals and international corporations can own 100% of a local private company in most commercial sectors. Certain highly regulated sectors, like telecommunications or banking, may require local shareholding percentages.</p>
+                        <p>Yes. Foreign nationals and international corporations can own 100% of a local private company
+                            in most commercial sectors. Certain highly regulated sectors, like telecommunications or
+                            banking, may require local shareholding percentages.</p>
                     </div>
                 </div>
-                
+
                 <!-- FAQ Item 4 -->
                 <div class="faq-item">
                     <button class="faq-trigger">
@@ -194,10 +217,12 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-content">
-                        <p>Under the Zambian Companies Act, every company must designate a Company Secretary. They are responsible for filing statutory annual returns, documenting resolutions, maintaining official registers, and ensuring overall governance compliance.</p>
+                        <p>Under the Zambian Companies Act, every company must designate a Company Secretary. They are
+                            responsible for filing statutory annual returns, documenting resolutions, maintaining
+                            official registers, and ensuring overall governance compliance.</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -224,7 +249,7 @@
     <script>
         // Theme Toggle Logic
         const themeToggle = document.getElementById("themeToggle");
-        
+
         themeToggle.addEventListener("click", () => {
             let theme = "light";
             if (document.documentElement.getAttribute("data-theme") !== "dark") {
@@ -239,13 +264,13 @@
         // Hamburger Menu Toggle
         const menuToggle = document.getElementById("menuToggle");
         const mobileNav = document.getElementById("mobileNav");
-        
+
         menuToggle.addEventListener("click", () => {
             mobileNav.classList.toggle("open");
             menuToggle.classList.toggle("active");
-            
+
             const spans = menuToggle.querySelectorAll("span");
-            if(menuToggle.classList.contains("active")) {
+            if (menuToggle.classList.contains("active")) {
                 spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
                 spans[1].style.opacity = "0";
                 spans[2].style.transform = "rotate(-45deg) translate(4px, -5px)";
@@ -258,14 +283,14 @@
 
         // FAQ Accordion Toggle
         const faqItems = document.querySelectorAll(".faq-item");
-        
+
         faqItems.forEach(item => {
             const trigger = item.querySelector(".faq-trigger");
             const content = item.querySelector(".faq-content");
-            
+
             trigger.addEventListener("click", () => {
                 const isOpen = item.classList.contains("open");
-                
+
                 // Close other open accordion items
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
@@ -274,7 +299,7 @@
                         otherItem.querySelector(".faq-icon").textContent = "+";
                     }
                 });
-                
+
                 // Toggle clicked item
                 if (isOpen) {
                     item.classList.remove("open");
