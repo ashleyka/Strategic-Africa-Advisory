@@ -331,7 +331,7 @@ header {
     min-height: 100%;
 }
 
-.mobile-nav-container a {
+.mobile-nav-container a:not(.nav-cta) {
     font-family: var(--font-title);
     font-size: 28px;
     font-weight: 300;
