@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
         (function () {
-            const theme = localStorage.getItem("theme") || "light";
+            const theme = localStorage.getItem("theme") || "dark";
             if (theme === "dark") {
                 document.documentElement.setAttribute("data-theme", "dark");
+            } else {
+                document.documentElement.setAttribute("data-theme", "light");
             }
         })();
     </script>
@@ -16,7 +18,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="stylesheet" href="Css/styles.css?v=1.5" />
+    <link rel="stylesheet" href="Css/styles.css?v=2.0" />
 </head>
 
 <body>
@@ -40,7 +42,7 @@
                 <a href="about.html">About</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
-                <a href="contact.html" class="nav-cta btn">Book Consultation</a>
+                <a href="book.html" class="nav-cta btn">Book Consultation</a>
             </div>
 
             <div class="header-actions">
@@ -74,7 +76,7 @@
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
-            <a href="contact.html" class="nav-cta btn">Book Consultation</a>
+            <a href="book.html" class="nav-cta btn">Book Consultation</a>
             
             <div class="mobile-nav-socials">
                 <span>Follow us</span>
@@ -295,12 +297,12 @@
         const themeToggle = document.getElementById("themeToggle");
 
         themeToggle.addEventListener("click", () => {
-            let theme = "light";
-            if (document.documentElement.getAttribute("data-theme") !== "dark") {
-                document.documentElement.setAttribute("data-theme", "dark");
-                theme = "dark";
+            let theme = "dark";
+            if (document.documentElement.getAttribute("data-theme") === "dark") {
+                document.documentElement.setAttribute("data-theme", "light");
+                theme = "light";
             } else {
-                document.documentElement.removeAttribute("data-theme");
+                document.documentElement.setAttribute("data-theme", "dark");
             }
             localStorage.setItem("theme", theme);
         });

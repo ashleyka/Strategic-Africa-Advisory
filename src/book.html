@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        (function () {
+            const theme = localStorage.getItem("theme") || "dark";
+            if (theme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            } else {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        })();
+    </script>
+    <title>Book a Consultation | Stratagem Africa Advisory</title>
+    <meta name="description" content="Book a private consultation with the Stratagem Africa Advisory team. Tell us about your business goals and we will get back to you within 24 hours." />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="Css/styles.css?v=2.0" />
+    <style>
+        /* =============================================
+           BOOK PAGE SPECIFIC STYLES
+        ============================================= */
+        .book-hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .book-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            border: 1px solid rgba(0, 229, 153, 0.2);
+            background: rgba(0, 229, 153, 0.05);
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+        }
+
+        .book-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            letter-spacing: -0.04em;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .book-hero h1 span {
+            color: var(--accent-green);
+        }
+
+        .book-hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* BOOKING LAYOUT */
+        .booking-section {
+            padding: 20px 0 100px;
+        }
+
+        .booking-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* LEFT SIDEBAR */
+        .booking-sidebar {
+            position: sticky;
+            top: 110px;
+        }
+
+        .booking-sidebar h2 {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .booking-sidebar > p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(0, 229, 153, 0.06);
+            border: 1px solid rgba(0, 229, 153, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .step-text h4 {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .step-text p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin-bottom: 28px;
+        }
+
+        .sidebar-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .sidebar-contact-item svg {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            color: var(--accent-green);
+        }
+
+        .sidebar-contact-item span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* RIGHT FORM */
+        .booking-form-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 48px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 229, 153, 0.3), transparent);
+        }
+
+        .booking-form-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .booking-form-card > p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            padding: 13px 16px;
+            font-size: 15px;
+            color: var(--text-main);
+            font-family: var(--font-body);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+            width: 100%;
+        }
+
+        .form-group select option {
+            background: #111;
+            color: var(--text-main);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: rgba(0, 229, 153, 0.4);
+            box-shadow: 0 0 0 3px rgba(0, 229, 153, 0.06);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            border-color: rgba(0, 229, 153, 0.3);
+            background: rgba(0, 229, 153, 0.03);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--accent-green);
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .checkbox-item input[type="checkbox"]:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .checkbox-item span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .services-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .form-submit-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .submit-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .btn-submit {
+            background: var(--text-main);
+            color: var(--bg-card);
+            border: 1px solid var(--text-main);
+            padding: 14px 32px;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: var(--border-radius-pill);
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px -8px rgba(0, 229, 153, 0.5);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #book-status {
+            display: none;
+            padding: 14px 18px;
+            border-radius: var(--border-radius-sm);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        #book-status.success {
+            background: rgba(0, 229, 153, 0.08);
+            border: 1px solid rgba(0, 229, 153, 0.3);
+            color: var(--accent-green);
+        }
+
+        #book-status.error {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 900px) {
+            .booking-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .booking-sidebar {
+                position: static;
+            }
+
+            .booking-form-card {
+                padding: 28px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+
+            .form-submit-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-submit {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .calendly-section {
+                padding: 0 0 60px;
+            }
+
+            .calendly-widget-box {
+                padding: 28px 20px;
+            }
+
+            .or-divider span {
+                font-size: 13px;
+            }
+        }
+
+        /* CALENDLY SECTION */
+        .calendly-section {
+            padding: 0 0 100px;
+        }
+
+        .or-divider {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 0 0 60px;
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .or-divider span {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .calendly-widget-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 48px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .calendly-widget-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 229, 153, 0.3), transparent);
+        }
+
+        .calendly-widget-box h3 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .calendly-widget-box > p {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 480px;
+            margin: 0 auto 36px;
+        }
+
+        .calendly-placeholder {
+            background: rgba(0, 229, 153, 0.03);
+            border: 1px dashed rgba(0, 229, 153, 0.25);
+            border-radius: var(--border-radius-md);
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .calendly-placeholder svg {
+            color: var(--accent-green);
+            opacity: 0.6;
+        }
+
+        .calendly-placeholder p {
+            font-size: 14px;
+            color: var(--text-muted);
+            max-width: 360px;
+            text-align: center;
+        }
+
+        .calendly-placeholder a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--accent-green);
+            border: 1px solid rgba(0, 229, 153, 0.3);
+            padding: 10px 22px;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            margin-top: 4px;
+        }
+
+        .calendly-placeholder a:hover {
+            background: rgba(0, 229, 153, 0.08);
+        }
+
+        /* When Calendly is live, this styles the iframe nicely */
+        .calendly-inline-widget {
+            min-width: 320px;
+            height: 700px;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="container nav">
+        <a href="index.html" class="logo-group">
+            <div class="logo-icon">
+                <img src="images/Logo/logo.jpeg" alt="Stratagem Africa Logo">
+            </div>
+            <div class="logo-text">
+                <strong>Stratagem Africa</strong>
+                <span class="logo-tagline">For A Confident Start and Strategic Growth</span>
+            </div>
+        </a>
+
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="book.html" class="nav-cta btn active">Book Consultation</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+
+                <!-- Hamburger Button -->
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Nav Panel -->
+<div class="mobile-nav-panel" id="mobileNav">
+    <div class="mobile-nav-container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta btn active">Book Consultation</a>
+
+        <div class="mobile-nav-socials">
+            <span>Follow us</span>
+            <div class="mobile-social-links">
+                <a href="https://www.facebook.com/share/1E2HwEko4x/" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.tiktok.com/@stratagem.africa?_r=1&_t=ZS-96uZ8H0Vzuc" target="_blank" rel="noopener">TikTok</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="book-hero">
+    <div class="container">
+        <div class="book-hero-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>
+            Accepting New Clients
+        </div>
+        <h1>Book your <span>private</span><br>consultation</h1>
+        <p>Tell us about your business goals and one of our senior advisors will reach out within 24 hours to confirm your session.</p>
+    </div>
+</section>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section">
+    <div class="container">
+        <div class="booking-layout">
+
+            <!-- LEFT SIDEBAR -->
+            <aside class="booking-sidebar">
+                <h2>What to expect</h2>
+                <p>A private, no-obligation session with a senior Stratagem Africa advisor tailored specifically to your business needs.</p>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">
+                            <h4>Submit your request</h4>
+                            <p>Fill in the form with your details and business goals. Takes less than 3 minutes.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">
+                            <h4>We review &amp; match you</h4>
+                            <p>Our team reviews your submission and assigns the right advisor for your needs.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">
+                            <h4>Confirmation within 24h</h4>
+                            <p>You will receive a confirmation email with a confirmed meeting time and agenda.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">
+                            <h4>Your consultation session</h4>
+                            <p>A focused 45-minute strategy session — in person or via video call.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-contact-info">
+                    <div class="sidebar-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                        <span>info@stratagemafrica.com</span>
+                    </div>
+                    <div class="sidebar-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                        <span>+260 970 000 000</span>
+                    </div>
+                    <div class="sidebar-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                        <span>Lusaka, Zambia</span>
+                    </div>
+                    <div class="sidebar-contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>Mon – Fri, 08:00 – 17:00 (GMT+2)</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- RIGHT FORM CARD -->
+            <div class="booking-form-card">
+                <h3>Request a Consultation</h3>
+                <p>All fields marked * are required. We keep your information strictly confidential.</p>
+
+                <div id="book-status"></div>
+
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-firstname">First Name *</label>
+                            <input type="text" id="book-firstname" name="firstName" required placeholder="Jane">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-lastname">Last Name *</label>
+                            <input type="text" id="book-lastname" name="lastName" required placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-email">Email Address *</label>
+                            <input type="email" id="book-email" name="email" required placeholder="jane@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-phone">Phone Number</label>
+                            <input type="tel" id="book-phone" name="phone" placeholder="+260 970 000 000">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-company">Company / Organisation</label>
+                            <input type="text" id="book-company" name="company" placeholder="Your company name">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-role">Your Role / Title</label>
+                            <input type="text" id="book-role" name="role" placeholder="e.g. CEO, Founder">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-country">Country / Region *</label>
+                        <select id="book-country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            <option>Zambia</option>
+                            <option>Zimbabwe</option>
+                            <option>South Africa</option>
+                            <option>Kenya</option>
+                            <option>Tanzania</option>
+                            <option>Uganda</option>
+                            <option>Botswana</option>
+                            <option>Namibia</option>
+                            <option>Mozambique</option>
+                            <option>Democratic Republic of Congo</option>
+                            <option>United Kingdom</option>
+                            <option>United States</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-type">Business Stage *</label>
+                        <select id="book-type" name="businessStage" required>
+                            <option value="" disabled selected>Select your stage</option>
+                            <option>Pre-launch (Idea / Planning stage)</option>
+                            <option>Start-up (0–2 years operating)</option>
+                            <option>Growing Business (2–5 years)</option>
+                            <option>Established Business (5+ years)</option>
+                            <option>Foreign Investor / Market Entry</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <span class="services-label">Services you are interested in *</span>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="Company Registration">
+                                <span>Company Registration</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="Tax Compliance">
+                                <span>Tax Compliance</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="Business Advisory">
+                                <span>Business Advisory</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="Company Secretarial">
+                                <span>Company Secretarial</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="Market Entry Strategy">
+                                <span>Market Entry Strategy</span>
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="Not sure yet">
+                                <span>Not sure yet</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-goals">Tell us about your business goals *</label>
+                        <textarea id="book-goals" name="goals" required placeholder="Briefly describe what you are trying to achieve and how we can help…"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-timeline">Preferred consultation timeframe</label>
+                        <select id="book-timeline" name="timeline">
+                            <option value="" disabled selected>Select a timeframe</option>
+                            <option>As soon as possible</option>
+                            <option>Within 1 week</option>
+                            <option>Within 2 weeks</option>
+                            <option>Within a month</option>
+                            <option>Flexible / No rush</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="book-how">How did you hear about us?</label>
+                        <select id="book-how" name="referralSource">
+                            <option value="" disabled selected>Select an option</option>
+                            <option>Google Search</option>
+                            <option>Facebook</option>
+                            <option>TikTok</option>
+                            <option>Referral / Word of mouth</option>
+                            <option>LinkedIn</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-submit-row">
+                        <span class="submit-note">🔒 Your information is private and never shared.</span>
+                        <button type="submit" class="btn-submit" id="bookSubmitBtn">
+                            Request Consultation
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CALENDLY SECTION -->
+<section class="calendly-section">
+    <div class="container">
+
+        <div class="or-divider">
+            <span>Or pick a time directly</span>
+        </div>
+
+        <div class="calendly-widget-box">
+            <h3>Schedule your session instantly</h3>
+            <p>Prefer to pick a time right now? Use the calendar below to book a slot that works for you.</p>
+
+            <!-- ============================================================
+                 CALENDLY EMBED
+                 Once you have your Calendly link, replace the placeholder
+                 below with the live Calendly inline widget:
+
+                 <div class="calendly-inline-widget"
+                      data-url="https://calendly.com/YOUR-USERNAME/30min"
+                      data-resize="true">
+                 </div>
+                 <script type="text/javascript"
+                     src="https://assets.calendly.com/assets/external/widget.js"
+                     async>
+                 </script>
+            ============================================================ -->
+
+            <div class="calendly-placeholder" id="calendlyPlaceholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                </svg>
+                <p>Your Calendly calendar will appear here once your account is connected.</p>
+                <a href="https://calendly.com" target="_blank" rel="noopener">
+                    Create a free Calendly account
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">Stratagem Africa Advisory</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="book.html">Book Consultation</a>
+            </div>
+
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/share/1E2HwEko4x/" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    Facebook
+                </a>
+                <a href="https://www.tiktok.com/@stratagem.africa?_r=1&_t=ZS-96uZ8H0Vzuc" target="_blank" rel="noopener" aria-label="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.13a8.16 8.16 0 004.77 1.52V7.21a4.85 4.85 0 01-1-.52z"/></svg>
+                    TikTok
+                </a>
+            </div>
+
+            <p class="footer-copy">© 2026 Stratagem Africa Advisory. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Theme Toggle
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+        let theme = "dark";
+        if (document.documentElement.getAttribute("data-theme") === "dark") {
+            document.documentElement.setAttribute("data-theme", "light");
+            theme = "light";
+        } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+        localStorage.setItem("theme", theme);
+    });
+
+    // Mobile Nav Toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", () => {
+        mobileNav.classList.toggle("open");
+        menuToggle.classList.toggle("active");
+        const spans = menuToggle.querySelectorAll("span");
+        if (menuToggle.classList.contains("active")) {
+            spans[0].style.transform = "translateY(6.5px) rotate(45deg)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "translateY(-6.5px) rotate(-45deg)";
+        } else {
+            spans.forEach(s => { s.style.transform = ""; s.style.opacity = ""; });
+        }
+    });
+
+    // Booking Form Submission
+    const bookingForm = document.getElementById("bookingForm");
+    const bookStatus = document.getElementById("book-status");
+    const bookSubmitBtn = document.getElementById("bookSubmitBtn");
+
+    bookingForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Gather selected services
+        const selectedServices = Array.from(
+            bookingForm.querySelectorAll('input[name="services"]:checked')
+        ).map(cb => cb.value);
+
+        const data = {
+            firstName: bookingForm.firstName.value,
+            lastName: bookingForm.lastName.value,
+            email: bookingForm.email.value,
+            phone: bookingForm.phone.value,
+            company: bookingForm.company.value,
+            role: bookingForm.role.value,
+            country: bookingForm.country.value,
+            businessStage: bookingForm.businessStage.value,
+            services: selectedServices.join(", "),
+            goals: bookingForm.goals.value,
+            timeline: bookingForm.timeline.value,
+            referralSource: bookingForm.referralSource.value,
+        };
+
+        bookSubmitBtn.disabled = true;
+        bookSubmitBtn.textContent = "Submitting…";
+        bookStatus.style.display = "none";
+
+        try {
+            const response = await fetch("/api/book", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                bookStatus.className = "success";
+                bookStatus.style.display = "block";
+                bookStatus.innerHTML = "✅ <strong>Your consultation request has been received!</strong> One of our advisors will reach out within 24 hours to confirm your session.";
+                bookingForm.reset();
+            } else {
+                throw new Error("Server error");
+            }
+        } catch (err) {
+            bookStatus.className = "error";
+            bookStatus.style.display = "block";
+            bookStatus.innerHTML = "❌ Something went wrong. Please try again or email us directly at <strong>info@stratagemafrica.com</strong>";
+        }
+
+        bookSubmitBtn.disabled = false;
+        bookSubmitBtn.innerHTML = 'Request Consultation <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>';
+        bookStatus.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "strategic-africa-advisory",
+  "version": "1.0.0",
+  "description": "Stratagem Africa Advisory — Business Setup & Compliance",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashleyka/Strategic-Africa-Advisory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashleyka/Strategic-Africa-Advisory/issues"
+  },
+  "homepage": "https://github.com/ashleyka/Strategic-Africa-Advisory#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemailer": "^9.0.1",
+    "pg": "^8.21.0",
+    "sqlite3": "^6.0.1"
+  }
+}
